@@ -162,6 +162,13 @@
 				}
 			}
 
+			&.style7 {
+				> .image:before {
+					background-color: _palette(accent6);
+					justify-content: center;
+				}
+			}
+
 			body:not(.is-touch) & {
 				&:hover {
 					> .image {
