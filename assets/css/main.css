@@ -2287,6 +2287,21 @@ input, select, textarea {
 		border-radius: 100%;
 	}
 
+	.click-zoom input[type=checkbox] {
+		display: none
+	  }
+	  
+	  .click-zoom img {
+		margin: 100px;
+		transition: transform 0.25s ease;
+		cursor: zoom-in
+	  }
+	  
+	  .click-zoom input[type=checkbox]:checked~img {
+		transform: scale(2);
+		cursor: zoom-out
+	  }
+
 /* Box */
 
 	.box {
@@ -2572,7 +2587,7 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		postiion: relative;
+		position: relative;
 		margin: -2.5em 0 0 -2.5em;
 	}
 
@@ -2731,7 +2746,6 @@ input, select, textarea {
 
 			.tiles article.style7 > .image:before {
 				background-color: #d2d4ad;
-				justify-content: center;
 			}
 
 			body:not(.is-touch) .tiles article:hover > .image {
