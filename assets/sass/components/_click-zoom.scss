@@ -1,16 +1,46 @@
 /*Click-Zoom Image*/
 
 .click-zoom input[type=checkbox] {
-  display: none
+  position: relative;
 }
 
 .click-zoom img {
   margin: 100px;
   transition: transform 0.25s ease;
-  cursor: zoom-in
+  cursor: zoom-in;
+  width: 200px; // Initial width
+  height: 150px; // Initial height
+  object-fit: contain; // Maintain aspect ratio
+  transform: scale(1); // Ensure images are not scaled initially
 }
 
 .click-zoom input[type=checkbox]:checked~img {
+  width: auto !important; // Reset width to auto when zoomed
+  height: auto !important; // Reset height to auto when zoomed
   transform: scale(2);
-  cursor: zoom-out
+  cursor: zoom-out;
+
+  // Center the zoomed-in image within its container
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) scale(2);
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: white;
+  padding: 8px;
+  box-sizing: border-box;
+  text-align: center;
 }
